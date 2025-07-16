@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MPLS SMKN 1 Maros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+  <style>
+    :root {
+      --primary: #0051ff;
+      --secondary: #00349e;
+      --accent: #f9a826;
+      --light: #f9f9f9;
+      --dark: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    nav {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .menu-toggle {
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+      color: var(--primary);
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .menu li a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .menu li a:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
+      background: url('./album/CA7.jpg') no-repeat center center/cover;
+      height: 300px;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .departments {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .gallery figure {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .gallery img {
+      width: 100%;
+      display: block;
+    }
+
+    .gallery figcaption {
+      padding: 0.8rem;
+      font-size: 0.9rem;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media(max-width: 768px) {
+      .menu {
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        right: 0;
+        background: white;
+        width: 200px;
+        padding: 1rem;
+        display: none;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <h1>MPLS SMKN 1 MAROS</h1>
+    <p>Mengenal Sekolah Lebih Dekat, Menjadi Siswa Hebat</p>
+    <p>(Menjadi Bagian Dari Keluarga Besar SMK)</p>
+  </header>
+
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="menu" id="menu">
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#kegiatan">Kegiatan</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <section class="section about" id="tentang">
+    <div class="hero" data-aos="zoom-in"></div>
+    <h2 data-aos="fade-right">Tentang MPLS</h2>
+    <p data-aos="fade-up">
+      MPLS (Masa Pengenalan Lingkungan Sekolah) merupakan kegiatan wajib untuk siswa baru di SMKN 1 Maros. MPLS bertujuan untuk mengenalkan lingkungan sekolah, budaya, tata tertib, serta membentuk karakter siswa agar siap mengikuti proses pembelajaran di tingkat SMK.
+    </p>
+  </section>
+
+  <section class="section" id="kegiatan">
+    <h2 data-aos="fade-right">Rangkaian Kegiatan</h2>
+    <div class="departments">
+      <div class="card" data-aos="flip-left">
+        <h3>Hari Pertama</h3>
+        <p>Pembukaan MPLS, pengenalan guru dan wali kelas, serta tour lingkungan sekolah.</p>
+      </div>
+      <div class="card" data-aos="flip-left" data-aos-delay="100">
+        <h3>Hari Kedua</h3>
+        <p>Materi Tata Tertib, Ekstrakurikuler, dan Simulasi Belajar yang Seru.</p>
+      </div>
+      <div class="card" data-aos="flip-left" data-aos-delay="200">
+        <h3>Hari Ketiga</h3>
+        <p>Games Interaktif, Testimoni Alumni, dan Penutupan Kegiatan MPLS 2025.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galeri">
+    <h2 data-aos="fade-right">Galeri MPLS</h2>
+    <div class="gallery" data-aos="zoom-in">
+      <figure>
+        <img src="./album/CA6.jpg" alt="mpls1">
+        <figcaption>Mendapat Materi Baru DI Kelas</figcaption>
+      </figure>
+      <figure>
+        <img src="./album/CA2.jpg" alt="mpls2">
+        <figcaption>Pengenalan Tentang Bahaya NAFSZA</figcaption>
+      </figure>
+      <figure>
+        <img src="./album/CA3.jpg" alt="mpls3">
+        <figcaption>Belajar Lagi Tentang Potensial Anak</figcaption>
+      </figure>
+      <figure>
+        <img src="./album/CA4.jpg" alt="mpls4">
+        <figcaption>Selanjutnya Yaitu kita Makan Bersama</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="kontak">
+    <h2 data-aos="fade-right">Kontak Panitia MPLS</h2>
+    <p data-aos="fade-up"><strong>Alamat:</strong> SMKN 1 Maros, Jl. Pendidikan No.100</p>
+    <p data-aos="fade-up"><strong>Email:</strong> whitezura@gmail.com</p>
+    <p data-aos="fade-up"><strong>Telp:</strong> 0851-4756-1258 (Zero)</p>
+  </section>
+
+  <footer>
+    &copy; 2025 MPLS SMKN 1 Maros | Dibuat oleh Zero
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('menu').classList.toggle('active');
+    });
+
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        document.getElementById('menu').classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
